@@ -9,6 +9,7 @@
     "ghcr.io/anthropics/devcontainer-features/claude-code:1.0": {}
   },
   "dev.containers.defaultExtensions": [
+    "pulkitgangwar.nextjs-snippets",
     "dsznajder.es7-react-js-snippets",
     "formulahendry.auto-rename-tag",
     "formulahendry.auto-close-tag",
