@@ -14,29 +14,29 @@ make ps
 ```bash
 make app
 ```
-- appコンテナ内でプロジェクトを作成(`despatched`)
-```bash
-npx create-next-app .
-```
 - Nodeのバージョン確認
 ```bash
 node -v
-v16.20.2
+v18.20.8
 ```
 - npmのバージョン確認
 ```bash
 npm -v
-8.19.4
+10.8.2
 ```
 - npxのバージョン確認
 ```bash
 npx -v
-8.19.4
+10.8.2
 ```
 - yarnのバージョン確認
 ```bash
 yarn -v
-1.22.19
+1.22.22
+```
+- appコンテナ内でプロジェクトを作成(`despatched`)
+```bash
+npx create-next-app .
 ```
 - プロジェクト直下でGit管理したいので、競合を防止するため、`nextjs-microblog`配下に新規作成された次のファイルをコピーして、削除
 ```bash
