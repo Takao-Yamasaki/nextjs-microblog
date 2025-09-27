@@ -11,6 +11,14 @@ export async function gesStaticPaths(params) {
   };
 }
 
+export async function getStaticProps({ params }) {
+  return {
+    props: {
+
+    },
+  }
+} 
+
 // nfと入力する
 export default function Post() {
   return (
