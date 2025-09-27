@@ -22,6 +22,15 @@ export async function getStaticProps() {
   };
 }
 
+// SSRの場合
+// export async function getServerSideProps(context) {
+//   return {
+//     props: {
+//       // コンポーネントに渡すためのprops
+//     }, 
+//   }
+// }
+
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],

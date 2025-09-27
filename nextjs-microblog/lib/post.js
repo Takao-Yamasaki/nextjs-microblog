@@ -6,6 +6,9 @@ const postDirectory = path.join(process.cwd(), "posts")
 
 // mdファイルのデータを取り出す
 export function getPostData() {
+  // 外部APIからデータを取得する場合
+  // const fetchData = await fetch("endpoint")
+
   const fileNames = fs.readdirSync(postDirectory);
   const allPostsData = fileNames.map((fileName) => {
     // ファイル名(id)を取り出す
