@@ -1,6 +1,8 @@
 import path from "path";
 import fs from "fs";
 import matter from "gray-matter";
+import { remark } from "remark";
+import html from "remark-html";
 
 const postDirectory = path.join(process.cwd(), "posts")
 
@@ -39,4 +41,27 @@ export function getAllPostIds() {
       },
     }
   })
+}
+
+// idに応じてブログ投稿データを返す関数
+export async function getPostData(id) {
+  const fullPath = path.join(postDirectory, `${id}.md`);
+  const fileContent = fs.readFileSync(fullPath, "utf8");
+
+  // メタデータを取得
+  const matterResult = matter(fileContent);
+
+  // mdファイルをHTMLとして出力する
+  const blogContent = await remark()
+  .use(html)
+  .process(matterResult.content);
+
+  const blogContentHTML = blogContent.toString();
+
+  // ...matterResult.data: title, date, author を展開するためのスプレッド構文
+  return {
+    id,
+    blogContentHTML,
+    ...matterResult.data,
+  }
 }
