@@ -6,13 +6,13 @@ import Link from "next/link";
 import Layout from "@/components/Layout";
 
 import utilStyle from "../styles/utils.module.css"
-import { getPostData } from "@/lib/post";
+import { getAllPostsData } from "@/lib/post";
 
 // SSGの場合
 // 一度だけデータを取得したい場合
 export async function getStaticProps() {
   // id, title, date, thumbnail
-  const allPostsData = getPostData();
+  const allPostsData = getAllPostsData();
   console.log(allPostsData);
 
   return {

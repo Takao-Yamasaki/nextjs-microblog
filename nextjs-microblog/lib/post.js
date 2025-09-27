@@ -7,7 +7,7 @@ import html from "remark-html";
 const postDirectory = path.join(process.cwd(), "posts")
 
 // mdファイルのデータを取り出す
-export function getPostData() {
+export function getAllPostsData() {
   // 外部APIからデータを取得する場合
   // const fetchData = await fetch("endpoint")
 
