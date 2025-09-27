@@ -1,4 +1,15 @@
 import Layout from "@/components/Layout";
+import { getAllPostIds } from "@/lib/post";
+
+export async function gesStaticPaths(params) {
+  const paths = getAllPostIds();
+  
+  // fallback: falseで他のページは404を返す
+  return {
+    paths,
+    fallback: false,
+  };
+}
 
 // nfと入力する
 export default function Post() {
