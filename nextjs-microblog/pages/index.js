@@ -1,9 +1,10 @@
 import styles from "@/styles/Home.module.css";
 import Link from "next/link";
-import Layout from "@/components/Layout";
+import Layout, { siteTitle } from "@/components/Layout";
 
 import utilStyle from "../styles/utils.module.css"
 import { getAllPostsData } from "@/lib/post";
+import Head from "next/head";
 
 // SSGの場合
 // 一度だけデータを取得したい場合
@@ -30,6 +31,9 @@ export async function getStaticProps() {
 
 export default function Home({ allPostsData }) {
   return <Layout home>
+    <Head>
+      <title>{siteTitle}</title>
+    </Head>
     <section className={utilStyle.headingMd}>
       <p>
         私はフルスタックエンジニアです/Udemy講師として活動しています/好きな言語はJavaScriptです
