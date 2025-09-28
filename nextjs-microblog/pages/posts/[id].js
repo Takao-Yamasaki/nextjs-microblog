@@ -1,7 +1,7 @@
 import Layout from "@/components/Layout";
 import { getAllPostIds, getPostData } from "@/lib/post";
 import utilStyles from "@/styles/utils.module.css"
-import { useRouter } from "next/router";
+// import { useRouter } from "next/router";
 
 export async function getStaticPaths(params) {
   const paths = getAllPostIds();
@@ -9,7 +9,8 @@ export async function getStaticPaths(params) {
   // fallback: falseで他のページは404を返す
   return {
     paths,
-    fallback: true,
+    fallback: false,
+    // fallback: true,
   };
 }
 
@@ -25,10 +26,10 @@ export async function getStaticProps({ params }) {
 
 // nfと入力する
 export default function Post({ postData }) {
-  const router = useRouter();
-  if (router.isFallback) {
-    return <div>読み込み中...</div>;
-  }
+  // const router = useRouter();
+  // if (router.isFallback) {
+  //   return <div>読み込み中...</div>;
+  // }
 
   return (
       <Layout>
