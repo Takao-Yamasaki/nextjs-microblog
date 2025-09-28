@@ -1,0 +1,14 @@
+# https://www.docker.com/ja-jp/blog/how-to-dockerize-react-app/
+FROM node:18
+
+WORKDIR /nextjs-microblog
+
+COPY nextjs-microblog/ ./
+
+RUN npm install
+
+RUN npm run build
+
+EXPOSE 3000
+
+CMD ["npm", "run", "start"]
